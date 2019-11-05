@@ -1,11 +1,13 @@
 # Helio-App-Demo-
 This is basic helio app demo.
-npm install
-npm install -g sequelize-cli
-sequalize-cli init
-sequelize-cli seed:generate --name schedules
 
-sequelize-cli db:migrate
-sequelize-cli db:seed:all
+1.npm install
 
-sequelize-cli db:seed:undo:all
+2.npm install -g sequelize-cli
+3.sequalize-cli init
+4.sequelize-cli seed:generate --name schedules
+
+5.sequelize-cli db:migrate
+6.sequelize-cli db:seed:all
+
+7.sequelize-cli db:seed:undo:all
