@@ -1,0 +1,159 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Helio application swagger integration demo",
+        "description": " Helio Application API"
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/createDevice": {
+            "post": {
+                "tags": [
+                    "Device"
+                ],
+                "summary": "Save device details",
+                "description": "Add new device",
+                "parameters": [
+                    {
+                        "name": "device",
+                        "in": "body",
+                        "description": "Device that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Device created successfully.",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                }
+            }
+        },
+        "/getDevices": {
+            "get": {
+                "tags": [
+                    "Device"
+                ],
+                "summary": "Get device list",
+                "responses": {
+                    "200": {
+                        "description": "Devices found successfully.",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                }
+            }
+        },
+        "/getDevice/{deviceId}": {
+            "get": {
+                "tags": [
+                    "Device"
+                ],
+                "summary": "Get device by id",
+                "responses": {
+                    "200": {
+                        "description": "Device found successfully.",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                }
+            }
+        }, 
+         "/updateDevice/{deviceId}": {
+            "put": {
+                "tags": [
+                    "Device"
+                ],
+                "summary": "Update device details by id",
+                "responses": {
+                    "200": {
+                        "description": "Device details updated successfully.",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                }
+            }
+        },
+        "/deleteDevice/{deviceId}": {
+            "delete": {
+                "tags": [
+                    "Device"
+                ],
+                "summary": "Delete device details by id",
+                "responses": {
+                    "200": {
+                        "description": "Device details deleted successfully.",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    }
+                }
+            }
+        }
+        
+    },
+    "definitions": {
+        "User": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "mobileNumber": {
+                    "type": "string"
+                }, 
+                "address": {
+                    "type": "string"
+                }
+            }
+        },
+        "Users": {
+            "type": "array",
+            "$ref": "#/definitions/User"
+        },
+        "Device": {
+            "properties": {
+                "macAddress": {
+                    "type": "string"
+                },
+                "ipAdrress": {
+                    "type": "number",
+                    "required": "true"
+                },
+                "deviceStatus":{
+
+                }
+            }
+        },
+        "Devices": {
+            "type": "array",
+            "$ref": "#/definitions/Device"
+        }
+    }
+}
