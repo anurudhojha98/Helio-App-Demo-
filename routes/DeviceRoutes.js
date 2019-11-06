@@ -1,17 +1,17 @@
 
-var deviceController = require('../controllers').deviceController;
+var deviceService = require('../services').deviceService;
 
 module.exports = (app,router) => {
 
-    router.post('/createDevice', deviceController.createDevice);
+    router.post('/createDevice', deviceService.createDevice);
 
-    router.get('/getDevices', deviceController.listDevices);
+    router.get('/getDevices', deviceService.listDevices);
 
-    router.get('/getDevice/:id', deviceController.getDeviceById);
+    router.get('/getDevice/:id', deviceService.getDeviceById);
 
-    router.put('/updateDevice/:id', deviceController.updateDevice);
+    router.put('/updateDevice/:id', deviceService.updateDevice);
 
-    router.delete('/deleteDevice/:id', deviceController.deleteDevice);
+    router.delete('/deleteDevice/:id', deviceService.deleteDevice);
  
     app.use('/api',router)
 

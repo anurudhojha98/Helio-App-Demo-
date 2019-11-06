@@ -14,7 +14,7 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json())
 
 
-var models = require('./models');
+var models = require('./db/models');
 
 models.sequelize.sync().then(() => {
     console.log('Nice,Database looks fine')

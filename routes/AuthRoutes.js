@@ -1,13 +1,13 @@
 
-var authController = require('../controllers').authController;
+var authService = require('../services').authService;
 
 module.exports = (app,router) => {
      
-    router.post('/signup', authController.signup);
+    router.post('/signup', authService.signup);
 
-    router.post('/login', authController.login);
+    router.post('/login', authService.login);
 
-    router.post('/resetPassword', authController.resetPassword);
+    router.post('/resetPassword', authService.resetPassword);
     
     app.use('/auth',router)
 }
