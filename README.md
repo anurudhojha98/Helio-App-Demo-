@@ -11,11 +11,11 @@ This is basic helio app demo.
 
 
 
-3.run npm install
+3.run "npm install"
 
 
 
-4.run sequelize-cli db:seed:all
+4.run "sequelize-cli db:seed:all"
 
 
 
