@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "Helio application swagger integration demo",
+        "title": "Heleo application swagger integration demo",
         "description": " Helio Application API"
     },
     "host": "localhost:3000",
@@ -17,7 +17,7 @@
         "application/json"
     ],
     "paths": {
-        "/createDevice": {
+        "/addDevice": {
             "post": {
                 "tags": [
                     "Device"
@@ -68,6 +68,15 @@
                 "tags": [
                     "Device"
                 ],
+                "parameters": [
+                    {
+                        "name": "deviceId",
+                        "in": "query",
+                        "type": "string",
+                        "required": true,
+                        "description": "deviceId"
+                    }
+                ],
                 "summary": "Get device by id",
                 "responses": {
                     "200": {
@@ -78,11 +87,28 @@
                     }
                 }
             }
-        }, 
-         "/updateDevice/{deviceId}": {
+        },
+        "/updateDevice/{deviceId}": {
             "put": {
                 "tags": [
                     "Device"
+                ],
+                "parameters": [
+                    {
+                        "name": "device",
+                        "in": "body",
+                        "description": "Device that we want to update",
+                        "schema": {
+                            "$ref": "#/definitions/Device"
+                        }
+                    },
+                    {
+                        "name": "deviceId",
+                        "in": "query",
+                        "type": "string",
+                        "required": true,
+                        "description": "deviceId"
+                    }
                 ],
                 "summary": "Update device details by id",
                 "responses": {
@@ -100,34 +126,42 @@
                 "tags": [
                     "Device"
                 ],
+                "parameters": [
+                    {
+                        "name": "deviceId",
+                        "in": "query",
+                        "type": "string",
+                        "required": true,
+                        "description": "deviceId"
+                    }
+                ],
                 "summary": "Delete device details by id",
                 "responses": {
-                    "200": {
-                        "description": "Device details deleted successfully.",
-                        "schema": {
-                            "$ref": "#/definitions/Device"
-                        }
+                    "204": {
+                        "description": "No content"
                     }
                 }
             }
         }
-        
     },
     "definitions": {
         "User": {
             "properties": {
                 "name": {
-                    "type": "string"
+                    "type": "string",
+                    "required": "true"
                 },
                 "email": {
-                    "type": "string"
+                    "type": "string",
+                    "required": "true"
                 },
                 "password": {
-                    "type": "string"
+                    "type": "string",
+                    "required": "true"
                 },
                 "mobileNumber": {
                     "type": "string"
-                }, 
+                },
                 "address": {
                     "type": "string"
                 }
@@ -139,15 +173,20 @@
         },
         "Device": {
             "properties": {
+                "deviceName": {
+                    "type": "string",
+                    "required": "true"
+                },
                 "macAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "required": "true"
                 },
                 "ipAdrress": {
                     "type": "number",
                     "required": "true"
                 },
-                "deviceStatus":{
-
+                "deviceStatus": {
+                    "type": "string"
                 }
             }
         },

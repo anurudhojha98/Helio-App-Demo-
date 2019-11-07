@@ -15,10 +15,10 @@ const filename = path.join(logDir, 'error.log');
 
 const logger = createLogger({
     level: 'debug',
-    format: format.combine(format.colorize(), format.timestamp({
+    format: format.combine(format.timestamp({
         format: 'YYYY-MM-DD HH:mm:ss'
     }),
-        //format.label({ label: path.basename(process.mainModule.filename) }),
+        format.label({ label: path.basename(process.mainModule.filename) }),
         format.printf(
             // We display the label text between square brackets using ${info.label} on the next line
             info => `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
@@ -33,8 +33,11 @@ const logger = createLogger({
     transports: [new transports.Console({
         level: 'info',
         format: format.combine(
+            format.timestamp({
+                format: 'YYYY-MM-DD HH:mm:ss'
+            }),
             format.colorize(),
-            // format.label({ label: path.basename(process.mainModule.filename) }),
+            format.label({ label: path.basename(process.mainModule.filename) }),
             format.printf(
                 info => `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
             )
@@ -44,8 +47,11 @@ const logger = createLogger({
         filename,
         level: 'error',
         format: format.combine(
+            format.timestamp({
+                format: 'YYYY-MM-DD HH:mm:ss'
+            }),
             format.colorize(),
-            // format.label({ label: path.basename(process.mainModule.filename) }),
+            format.label({ label: path.basename(process.mainModule.filename) }),
             format.printf(
                 info => `${info.timestamp} ${info.level} [${info.label}]: ${info.message}`
             )

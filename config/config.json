@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "helio_dev",
+    "database": "heleo_dev",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false

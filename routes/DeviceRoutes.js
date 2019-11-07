@@ -1,9 +1,9 @@
 
 var deviceService = require('../services').deviceService;
 
-module.exports = (app,router) => {
+module.exports = (app, router) => {
 
-    router.post('/createDevice', deviceService.createDevice);
+    router.post('/addDevice', deviceService.createDevice);
 
     router.get('/getDevices', deviceService.listDevices);
 
@@ -12,7 +12,7 @@ module.exports = (app,router) => {
     router.put('/updateDevice/:id', deviceService.updateDevice);
 
     router.delete('/deleteDevice/:id', deviceService.deleteDevice);
- 
-    app.use('/api',router)
+
+    app.use('/api', router)
 
 };
