@@ -7,7 +7,7 @@ This is basic helio app demo.
 
 
 
-2. create database "heleo-dev" //i have create connection in db with "root" password. you can change it from config file of the project.
+2. create database "heleo-dev" //i have created connection in db with "root" password. you can change it from config file of the project.
 
 
 
@@ -24,16 +24,22 @@ This is basic helio app demo.
 
 These are few other commands we will use in future.
 
+
+
 1.sequalize-cli init
+
 
 
 2.sequelize-cli seed:generate --name schedules
 
 
+
 3.sequelize-cli db:migrate
 
 
+
 4.sequelize-cli db:seed:all
+
 
 
 5.sequelize-cli db:seed:undo:all
