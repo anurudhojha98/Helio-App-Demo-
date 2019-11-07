@@ -5,6 +5,7 @@ var create_device=()=>{
 }
 var get_device=()=>{
     //write the query to fetch data from db
+   // "SELECT * FROM `devices`", { type: sequelize.QueryTypes.SELECT}
 }
 
 var update_device=()=>{
