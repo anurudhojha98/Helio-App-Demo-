@@ -17,7 +17,7 @@
         "application/json"
     ],
     "paths": {
-        "/addDevice": {
+        "/device": {
             "post": {
                 "tags": [
                     "Device"
@@ -47,7 +47,7 @@
                 }
             }
         },
-        "/getDevices": {
+        "/devices": {
             "get": {
                 "tags": [
                     "Device"
@@ -63,7 +63,7 @@
                 }
             }
         },
-        "/getDevice/{deviceId}": {
+        "/device/{deviceId}": {
             "get": {
                 "tags": [
                     "Device"
@@ -86,9 +86,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/updateDevice/{deviceId}": {
+            },
             "put": {
                 "tags": [
                     "Device"
@@ -119,9 +117,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/deleteDevice/{deviceId}": {
+            },
             "delete": {
                 "tags": [
                     "Device"

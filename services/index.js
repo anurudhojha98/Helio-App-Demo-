@@ -1,7 +1,7 @@
-var authService=require('./AuthService');
-var deviceService=require('./DeviceService');
-module.exports={
+var authService = require('./auth.service');
+var deviceService = require('./device.service');
+module.exports = {
     authService,
     deviceService
-    
+
 }
