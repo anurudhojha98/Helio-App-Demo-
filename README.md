@@ -19,7 +19,7 @@ This is basic helio app demo.
 
 
 
-// You can see the swagger api's "http://localhost:3000/api-docs/#/" 
+// You can view the swagger api's "http://localhost:3000/api-docs/#/" 
 
 
 These are few other commands we will use in future.
