@@ -26,7 +26,7 @@ These are few other commands we will use in future.
 
 
 
-1.sequalize-cli init
+1.sequelize-cli init
 
 
 
